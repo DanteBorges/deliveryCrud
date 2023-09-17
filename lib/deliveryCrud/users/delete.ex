@@ -1,12 +1,12 @@
-defmodule DeliveryCrudWeb.Items.Delete do
-  alias DeliveryCrudWeb.Error
-  alias DeliveryCrudWeb.Item
-  alias DeliveryCrudWeb.Repo
+defmodule DeliveryCrud.Users.Delete do
+  alias DeliveryCrud.Error
+  alias DeliveryCrud.Repo
+  alias DeliveryCrud.User
 
   def call(id) do
-    case Repo.get(Item, id) do
-      nil -> Error.build(:not_found, "Item not found")
-      item -> Repo.delete(item)
+    case Repo.get(User, id) do
+      nil -> Error.build_user_not_found_error()
+      user -> Repo.delete(user)
     end
   end
 end
