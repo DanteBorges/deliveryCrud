@@ -9,6 +9,9 @@ defmodule DeliveryCrudWeb.Router do
     pipe_through :api
 
     get "/", WelcomeController, :index
+
+    resources "/users", UserController, except: [:new, :edit, :create]
+
   end
 
   # Enables LiveDashboard only for development

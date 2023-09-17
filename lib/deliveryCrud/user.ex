@@ -1,10 +1,10 @@
-defmodule Rockelivery.User do
+defmodule DeliveryCrud.User do
   use Ecto.Schema
 
   import Ecto.Changeset
 
   alias Ecto.Changeset
-  alias Rockelivery.Order
+  alias DeliveryCrud.Order
 
   @primary_key {:id, :binary_id, autogenerate: true}
 
