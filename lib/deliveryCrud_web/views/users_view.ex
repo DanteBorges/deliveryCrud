@@ -1,7 +1,7 @@
 defmodule DeliveryCrudWeb.UserView do
   use DeliveryCrudWeb, :view
 
-  alias Rockelivery.User
+  alias DeliveryCrud.User
 
   def render("create.json", %{user: %User{} = user, token: token}) do
     %{
