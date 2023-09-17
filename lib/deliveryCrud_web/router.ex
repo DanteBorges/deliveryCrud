@@ -1,12 +1,24 @@
 defmodule DeliveryCrudWeb.Router do
   use DeliveryCrudWeb, :router
 
+  alias DeliveryCrudWeb.Plugs.UUIDChecker
+
   pipeline :api do
     plug :accepts, ["json"]
+    plug UUIDChecker
+  end
+
+  pipeline :auth do
+    plug DeliveryCrudWeb.Auth.Pipeline
   end
 
   scope "/api", DeliveryCrudWeb do
     pipe_through :api
+
+    get "/", WelcomeController, :index
+
+    resources "/users", UserController, except: [:new, :edit, :create]
+
   end
 
   # Enables LiveDashboard only for development
