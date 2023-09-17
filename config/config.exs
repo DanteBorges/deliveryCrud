@@ -10,6 +10,10 @@ use Mix.Config
 config :deliveryCrud,
   ecto_repos: [DeliveryCrud.Repo]
 
+  config :deliveryCrud, DeliveryCrud.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :deliveryCrud, DeliveryCrudWeb.Endpoint,
   url: [host: "localhost"],
