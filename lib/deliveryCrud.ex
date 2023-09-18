@@ -14,4 +14,3 @@ defmodule DeliveryCrud do
 
   defdelegate create_item(params), to: ItemCreate, as: :call
 end
-DeliveryCrud.create_user()
