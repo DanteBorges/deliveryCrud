@@ -21,6 +21,8 @@ defmodule DeliveryCrudWeb.Router do
 
     resources "/items", ItemController, except: [:new, :edit]
 
+    resources "/orders", OrderController, except: [:new, :edit]
+
 
   end
 
