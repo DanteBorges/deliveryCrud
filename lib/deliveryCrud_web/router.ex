@@ -19,6 +19,9 @@ defmodule DeliveryCrudWeb.Router do
 
     resources "/users", UserController, except: [:new, :edit, :create]
 
+    resources "/items", ItemController, except: [:new, :edit]
+
+
   end
 
   # Enables LiveDashboard only for development
