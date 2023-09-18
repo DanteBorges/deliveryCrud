@@ -1,4 +1,8 @@
 defmodule DeliveryCrud do
+  alias DeliveryCrud.Items.Create, as: ItemCreate
+
+  alias DeliveryCrud.Order.Create, as: OrderCreate
+
 
   alias DeliveryCrud.Users.Create, as: UserCreate
   alias DeliveryCrud.Users.Delete, as: UserDelete
@@ -9,5 +13,10 @@ defmodule DeliveryCrud do
   defdelegate get_user_by_id(id), to: UserGet, as: :by_id
   defdelegate delete_user(id), to: UserDelete, as: :call
   defdelegate update_user(params), to: UserUpdate, as: :call
+
+  defdelegate create_item(params), to: ItemCreate, as: :call
+
+
+  defdelegate create_order(params), to: OrderCreate, as: :call
+
 end
-DeliveryCrud.create_user()
