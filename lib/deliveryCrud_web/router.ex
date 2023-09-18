@@ -19,9 +19,9 @@ defmodule DeliveryCrudWeb.Router do
 
     resources "/users", UserController, except: [:new, :edit, :create]
 
-    resources "/items", ItemController, except: [:new, :edit]
+    post "/items", ItemController, except: [:new, :edit]
 
-    resources "/orders", OrderController, except: [:new, :edit]
+    post "/orders", OrderController, except: [:new, :edit]
 
 
   end
